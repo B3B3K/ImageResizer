@@ -1,0 +1,7 @@
+back.jpg
+cancel.jpg
+file.jpg
+select.jpg
+start.jpg
+/uploads
+./modified_image.jpg
