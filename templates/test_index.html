@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cool Website</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #7FC8A9, #A16B47);
+        }
+
+        .plate {
+            width: 75%;
+            margin: 0 auto;
+            background-color: #F4ECD8;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+
+        .plate img {
+            width: 50%;
+            height: auto;
+        }
+
+        .plate .left,
+        .plate .right {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .plate .right {
+            margin-left: 20px;
+        }
+
+        .plate .left h2,
+        .plate .right h2 {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .plate .left p,
+        .plate .right p {
+            text-align: center;
+            margin-top: 0;
+        }
+        .image-button {
+            width: 100px;
+            height: 50px;
+            background-image: url('static/start.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="plate">
+        <div class="left">
+            <h2>Image Quality Redesiner</h2>
+            <p>by Osman Çelik</p>
+            <h2>here we are:</h2>
+            <form method="POST" action="/test_demo">
+                <button class="image-button" type="submit" name="execute_function"></button>
+            </form>
+            <p>made with Paint</p>
+        </div>
+        <img src="static/uploads/modified_image.jpg" alt="image">
+
+        
+        <div class="right">
+            <h2>Date</h2>
+            <p id = "date"></p>
+            <p>Server Info:</p>
+            <p>RockPiS + Dietpi</p>
+            <h2>Im not recommendig RockPiS device</h2>
+            <p>cause gpio controlling issues</p>
+            <p>lol</p>
+            <p>foto sizden önceki userdan kalma</p>
+            <script>// Select the div element
+                const dateContainer = document.getElementById('date');
+                
+                // Get the current date
+                const currentDate = new Date();
+                
+                // Format the date as desired (e.g., "July 17, 2023")
+                const formattedDate = currentDate.toLocaleDateString('en-US', {
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric'
+                });
+                
+                // Update the content of the div with the formatted date
+                dateContainer.textContent = formattedDate;
+                </script>
+        </div>
+    </div>
+</body>
+</html>

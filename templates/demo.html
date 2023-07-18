@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PAGE2</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #A16B47, #7FC8A9);
+        }
+        
+        .numberInput {
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        .plate {
+            width: 75%;
+            margin: 0 auto;
+            background: linear-gradient(to right, #7FC8A9, #A16B47);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .plate img {
+            width: 50%;
+            height: auto;
+            margin-top: 20px;
+        }
+        
+        .buttonContainer {
+            margin-top: 20px;
+        }
+        
+        .buttonContainer button {
+            margin-right: 10px;
+        }
+        
+        .image-button {
+            width: 100px;
+            height: 50px;
+            background-image: url('static/button.jpg');
+            background-size: cover;
+        }
+        
+        .select-button {
+            width: 100px;
+            height: 50px;
+            background-image: url('static/select.jpg');
+            background-size: cover;
+        }
+        
+        .cancel-button {
+            width: 100px;
+            height: 50px;
+            background-image: url('static/cancel.jpg');
+            background-size: cover;
+        }
+        
+        .file-button {
+            width: 100px;
+            height: 50px;
+            background-image: url('static/file.jpg');
+            background-size: cover;
+        }
+        
+        .file-input {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .file-label {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background-image: url('static/file.jpg');
+            background-size: cover;
+            cursor: pointer;
+        }
+        
+        .file-label input {
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="plate">
+        
+        <h2>SSS</h2>
+        <p>1:  button=> FİLE</p>
+        <p>2:  button=> SELECT image</p>
+        <p>.5: wait for look of photo</p>
+        <p>3:  enter value for size of average square dimension</p>
+        <p>.5: if u not sure, just enter 16 </p>
+        <p>4:  wait for redirecting</p>
+        <p>.5: speed will change about number (inverse proportion)</p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label class="file-label" for="fileInput">
+                <input class="file-input" type="file" id="fileInput" name="image">
+            </label>
+            <br>
+            <div class="buttonContainer">
+                <button class="select-button" type="submit"></button>
+                <button class="cancel-button" type="button" value="index"></button>
+            </div>
+        </form>
+        <br>
+        <form method="POST" action="/photo">
+            <input type="number" name="number" min="0" max="30">
+          <button type="submit">Calculate</button>
+        </form>
+        
+        <img src="{{ image_path }}">
+        
+        
+    </div>
+
+</body>
+</html>
